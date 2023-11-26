@@ -1,7 +1,6 @@
 <?php
 
-require('./HttpMethods.php');
-require('./HttpNotFoundException.php');
+namespace Lune;
 
 class Router
 {

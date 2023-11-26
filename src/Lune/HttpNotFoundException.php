@@ -1,6 +1,8 @@
 <?php
 
-class HttpNotFoundException extends Exception
+namespace Lune;
+
+class HttpNotFoundException extends \Exception
 {
     public function __construct()
     {
