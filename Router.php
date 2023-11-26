@@ -3,7 +3,8 @@
 require('./HttpMethods.php');
 require('./HttpNotFoundException.php');
 
-class Router {
+class Router
+{
     protected array $routes = [];
 
     public function __construct()
@@ -26,7 +27,7 @@ class Router {
 
         return $callback;
     }
-    
+
     public function get(string $path, callable $callback): void
     {
         $this->routes[HttpMethods::GET->value][$path] = $callback;
@@ -35,5 +36,20 @@ class Router {
     public function post(string $path, callable $callback): void
     {
         $this->routes[HttpMethods::POST->value][$path] = $callback;
+    }
+
+    public function put(string $path, callable $callback): void
+    {
+        $this->routes[HttpMethods::PUT->value][$path] = $callback;
+    }
+
+    public function patch(string $path, callable $callback): void
+    {
+        $this->routes[HttpMethods::PATCH->value][$path] = $callback;
+    }
+
+    public function delete(string $path, callable $callback): void
+    {
+        $this->routes[HttpMethods::DELETE->value][$path] = $callback;
     }
 }
